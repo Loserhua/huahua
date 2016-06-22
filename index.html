@@ -1,14 +1,329 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>小花的第一个github网页</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>毕业</title>
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.modernizr.min.js"></script>
+    <script src="js/bootstrapValidator.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrapValidator.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.parallux.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div class="embed-responsive embed-responsive-16by9">
+        <video autoplay loop poster="" id="bgvid" class=" embed-responsive-item" src="video/cloud.mp4"></video>
+    </div>
+    <!-- 导航菜单 -->
+			<div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand logo" href="index.html"><img src="images/" alt="毕业"></a>
+            <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+             <ul class="nav navbar-nav navbar-right" >
+            <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="photo.html"><span class="glyphicon glyphicon-camera"></span> 毕业照</a></li>
+            <li><a href="movie.html"><span class="glyphicon glyphicon-film"></span> 微电影</a></li>
+            <li><a href="words.html"><span class="glyphicon glyphicon-edit"></span> 青春寄语</a></li>
+             <li><a id="login_a" href="#loginModal" data-toggle="modal">登录</a></li>
+            <li><a id="sign_a" href="#signModal" data-toggle="modal">注册</a></li>
+            <li><a id="member" href="#loginModal"></a></li>
+            <li><a id="logout" href="#signModal" >退出</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid div1">
+        <div class="container">
+					<div class="head_text">
+						<p>青春，就是如此，<br>不是你上了大学，就是大学上了你！</p>
+					</div>
+					<div class="scroll-down" id="scroll">
+          <span class="glyphicon glyphicon-menu-down"></span>
+					</div>
+				</div>
+   </div>
+
+<!-- 登录表单 -->
+   <div class="modal modalTop fade" tabindex="-1" id="loginModal">
+      <!-- 窗口声明 -->
+      <div class="modal-dialog">
+       <!-- 内容声明 -->
+      <div class="modal-content">
+        <!-- 头部 -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+            </button>
+            <h4 class="modal-title">用户登录</h4>
+        </div>
+        <!-- 主体 -->
+        <div class="modal-body">
+
+
+            <form class="form-horizontal" id="loginForm" method="post" action="" >
+            <div class="form-group">
+              <label for="login_name" class="col-sm-2 control-label">用户名</label>
+              <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" id="login_name" placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="login_password" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="login_password" placeholder="请输入密码">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="expires"> 一周内免密码登录
+                  </label>
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="登录" class="btn btn-primary btn-lg btn-block" id="loginBtn">
+            </input>
+
+          </form>
+
+        </div>
+    <!--     <div class="modal-footer">
+           <button type="button" class="btn btn-primary btn-lg btn-block" id="loginBtn">登录
+            </button>
+
+        </div> -->
+     </div>
+    </div>
+  </div>
+  <!-- 注册表单 -->
+   <div class="modal modalTop fade" tabindex="-1" id="signModal">
+      <!-- 窗口声明 -->
+      <div class="modal-dialog ">
+       <!-- 内容声明 -->
+      <div class="modal-content">
+        <!-- 头部 -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+            </button>
+            <h4 class="modal-title">账号注册</h4>
+        </div>
+        <!-- 主体 -->
+        <div class="modal-body">
+            <form class="form-horizontal" id="signForm" method="post" >
+            <div class="form-group">
+              <label for="sign_name" class="col-sm-2 control-label">用户名</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" id="sign_name" placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sign_password" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="sign_password" placeholder="请输入密码">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="sign_password2" class="col-sm-2 control-label">确认密码</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="confirmPassword" id="sign_password2" placeholder="请确认密码">
+              </div>
+            </div>
+             <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">邮箱</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" name="email" id="email" placeholder="请输入邮箱">
+              </div>
+            </div>
+               <div class="form-group">
+              <label for="sex" class="col-sm-2 control-label">性别</label>
+              <div class="col-sm-10 ">
+                 <input type="radio" name="sex"  value="男"  checked="checked"> 男
+                  <input type="radio" name="sex"  value="女"> 女 
+              </div>
+            </div>
+               
+          
+           <input type="submit" class="btn btn-primary btn-lg btn-block" id="signBtn">
+            </input>
+
+          </form>
+        </div>
+     </div>
+    </div>
+  </div>
+
+   <div class="modal "  tabindex="-1" id="loading">
+      <!-- 窗口声明 -->
+      <div class="modal-dialog modal-sm">
+       <!-- 内容声明 -->
+      <div class="modal-content">
+        <!-- 主体 -->
+        <div class="modal-body">
+           <img src="images/loading.gif" alt="">正在注册......
+        </div>
+     </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+ <div class="parallux" id="tab1">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab1_bg">
+  </div>
+  </diV>
+   <div class="text block" >
+        <p>大学是一段梦的旅程，我们是一个个寻梦的旅人。<br>
+          此刻的我们站在大学的尾巴上，怀着复杂的心情回首这四年的过往，<br>
+          就像旅人撑着长篙，在回忆的河中放歌，向青草更青处漫溯……
+        </p>
+      </div>
+    <div class="scroll-down2" id="scroll1">
+          <span class="glyphicon glyphicon-menu-down"></span>
+          </div> 
+</div>
+ <div class="parallux" id="tab2">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab2_bg">
+     <div class="text ">
+        <p>
+          大学生活经历了太多，也学会很多为人处事的道理，<br>
+          欢笑也好，痛苦也罢，都是我们成长中的一个过程。<br>
+          红颜弹指老，刹那芳华。激昂已过，<br>彼此苦涩的笑容告诉我们，
+          我们的大学生活已成往事。
+          </p>
+      </div>
+    <div class="scroll-down2" id="scroll2">
+          <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+  </div> 
+  </diV>
+</div>
+ <div class="parallux" id="tab3">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab3_bg">
+  </div>
+  </diV>
+     <div class="text">
+        <p>或许这就是青春吧，终将逝去。<br>
+          但是在那个美好的年纪，你可以恣意，可以张扬，<br>
+          可以伤心哭泣，
+          可以疯狂笑闹，也可以……伤害和承受伤害。<br>
+          你永远会记得，青春年少时有人路过你的生命，<br>
+          那个人是你年少阳光里最温暖明媚的一束，是青春里不朽的存在</p>
+      </div>
+      <div class="scroll-down2" id="scroll3">
+          <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+</div>
+ <div class="parallux" id="tab4">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab4_bg">
+      <div class="text">
+        <p>
+          畏惧过，笑过，伤过，悟过。<br>
+          青春散场，却等待下一场开幕。希望所有的毕业生都能快乐没有忧伤，<br>
+          正如《诗经》所写：维以不永伤。
+        </p>
+      </div>
+     <div class="scroll-down2" id="scroll4">
+          <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+  </div>
+  </diV>
+</div>
+ <div class="parallux" id="tab5">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab5_bg">
+  </div>
+  </diV>
+     <div class="text">
+        <p>入学时想着毕业，毕业却因离开友谊而失眠，<br>再见了相互嫌弃的老同学，再见了来不及说出的谢谢，<br>
+        我相信，我们还会再见，我相信，我会一直想念，<br>
+        我相信，我们都会很好，我相信，我相信的一切变成火焰， <br>
+        照耀彼此的脸，茫茫人海相互看见。</p>
+      </div>
+     <div class="scroll-down2" id="scroll5">
+          <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+</div>
+ <div class="parallux" id="tab6">
+  <div class="parallux-bg fixed">
+    <div class="parallux-inner dark" id="tab6_bg">
+  
+
+  </div>
+  </diV>
+
+</div>
+
+
+<footer id="footer">
+   <div class="container">
    <p>
-	在Github上创建了自己的项目仓库，如何将其下载到本地呢？下面以Windows下的操作系统为例在Github上创建了自己的项目仓库，如何将其下载到本地呢？下面以Windows下的操作系统为例在Github上创建了自己的项目仓库，如何将其下载到本地呢？下面以Windows下的操作系统为例在Github上创建了自己的项目仓库，如何将其下载到本地呢？下面以Windows下的操作系统为例在Github上创建了自己的项目仓库，如何将其下载到本地呢？下面以Windows下的操作系统为例
-	</p>
-</body>
-</html>
+     <a href="">关于本站</a>|<a href="">意见反馈</a>|<a href="">版权投诉</a>
+   </p>
+   <p>苏ICP备12345678.©2016-2026 loserhua.com. Powered by Bootstrap.</p>
+   </div>
+</footer>
+
+
+
+
+<!-- 
+ <div class="container-fluid div2">
+		<div class=" container-fluid div3" id="div3">
+
+  <div class="row">
+      <div class="col-md-4"><div class="block" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+      <div class="col-md-4"><div class="block" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+      <div class="col-md-4"><div class="block" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-6"><div class="block" data-rotate-y="270deg" data-move-x="-150%"></div></div>
+      <div class="col-md-6"><div class="block" data-rotate-y="270deg" data-move-x="150%"></div></div>
+    </div>
+
+
+
+  </div>
+	</div>
+ -->
+
+
+
+
+
+
+
+
+    <script src="js/jquery.smoove.min.js"></script>
+    <script src="js/jquery.parallux.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body></html>
