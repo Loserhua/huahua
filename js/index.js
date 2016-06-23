@@ -207,13 +207,13 @@ $(document).ready(function(){
         });
     
   
-    // $('#masonry').imagesLoaded( function(){
+    $('#masonry').imagesLoaded( function(){
         $('#masonry').masonry({
             itemSelector : '.box',
             gutterWidth : 200,
             isAnimated: true,
         });
-    // });
+     });
           
 
 
