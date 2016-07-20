@@ -319,27 +319,38 @@ body {
   text-align: center;
 
 }
+.tab6 .tab6_no1,
+.tab6 .tab6_no2,
+.tab6 .tab6_no3{
+  font-size: 0rem;
+}
 .tab6 .tab6_no1 p{
-  font-size: 1.5rem;
+
   color: #e44c65;
+ 
 }
 .tab6 .tab6_no1:hover{
   background: url(../images/tab6_bg1.png);
+  font-size: 1.8rem;
 }
 .tab6 .tab6_no2 p{
-  font-size: 1.5rem;
+ 
   color: #39c088;
+  
 }
 .tab6 .tab6_no2:hover{
   background: url(../images/tab6_bg2.jpg);
+    font-size: 1.8rem;
 }
 .tab6 .tab6_no3 p{
-  font-size: 1.5rem;
   color: #5480F1;
+  
 }
 .tab6 .tab6_no3:hover{
   background: url(../images/tab6_bg3.jpg);
+    font-size: 1.8rem;
 }
+
 /*tab7部分*/
 
 .tab7{
