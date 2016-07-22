@@ -136,7 +136,7 @@ body {
   height: 180px;
   border-radius:50%;
   overflow:hidden;
-  margin:9rem auto 3rem auto;
+  margin:9rem auto 1rem auto;
 }
 .header_text{
   color: #34CC8B;
@@ -147,7 +147,7 @@ body {
 .header_btn{
   width: 50px;
   height: 50px;
-  margin: 4rem auto 4rem auto;
+  margin: 13rem auto 6rem auto;
 }
 .header_btn1{
   /* 设置默认样式，开启3d硬件加速 */
