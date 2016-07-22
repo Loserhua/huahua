@@ -311,7 +311,7 @@ body {
 
 /*tab6部分*/
 .tab6{
-  background: url(../images/tab6_bg.jpg) no-repeat center fixed;
+  background: url(../images/tab6_bg.jpg) no-repeat center;
 }
 .tab6 div{
   margin: 1.5rem 0;
